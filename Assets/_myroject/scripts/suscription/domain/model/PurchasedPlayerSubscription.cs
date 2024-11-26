@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
 
 public class PurchasedPlayerSubscription
 {
@@ -42,20 +40,5 @@ public class PurchasedPlayerSubscription
         }
 
         return !DaysClaimed.Contains(dayToClaim) && IsActive(currentDate);
-    }
-
-    public void Claim(DateTime claimDate)
-    {
-        var dayToClaim = (claimDate - PurchaseDate).Days;
-
-        if (dayToClaim > DurationDays)
-        {
-            throw new EvaluateException();
-        }
-
-        LastClaimedDate = claimDate;
-
-        DaysClaimed ??= new List<int>();
-        DaysClaimed.Add(dayToClaim);
     }
 }

@@ -10,9 +10,23 @@ public class SubscriptionUiModelMapper
         if (playerSubscription.IsActive(DateTime.Now) && playerSubscription.CanClaimToday(DateTime.Now))
         {
             callToActionType = new SubscriptionCallToActionClaim();
-        } else
+        }
+        else if (playerSubscription.IsActive(DateTime.Now))
         {
-            callToActionType = new SubscriptionCallToActionTimer(playerSubscription.ExpirationDate);
+            var tomorrow = DateTime.Now.AddDays(1);
+            var nextClaimableTime = new DateTime(
+                year: tomorrow.Year,
+                month: tomorrow.Month,
+                day: tomorrow.Day,
+                hour: 0,
+                minute: 0,
+                second: 0
+            );
+            callToActionType = new SubscriptionCallToActionTimer(nextClaimableTime);
+        }
+        else
+        {
+            callToActionType = new SubscriptionCallToActionBuy();
         }
 
         return new(callToActionType);

@@ -1,12 +1,15 @@
 using System;
 using LanguageExt;
 using Cysharp.Threading.Tasks;
+using R3;
 
 public interface Subscriptions
 {
+    public Either<SubscriptionError, PurchasedPlayerSubscription> CurrentPlayerSubscription();
+
     public UniTask<Either<SubscriptionError, Boolean>> BuySubscription();
 
-    public UniTask<Either<SubscriptionError, PurchasedPlayerSubscription>> GetPlayerSubscription();
+    public ReadOnlyReactiveProperty<PurchasedPlayerSubscription> FetchPlayerSubscription();
 
-    public Either<SubscriptionError, PurchasedPlayerSubscription> ClaimRewards();
+    public void UpdateSubscription(PurchasedPlayerSubscription updatedPlayerSubscription);
 }

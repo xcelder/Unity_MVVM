@@ -3,7 +3,6 @@ using Zenject;
 
 public class SuscriptionInstaller : MonoInstaller
 {
-    [SerializeField] SubscriptionViewModel subscriptionViewModel;
 
     public override void InstallBindings()
     {
@@ -14,8 +13,5 @@ public class SuscriptionInstaller : MonoInstaller
         Container.Bind<ClaimRewards>().AsSingle();
         Container.Bind<GetPlayerSubscription>().AsSingle();
         Container.Bind<SubscriptionUiModelMapper>().AsTransient();
-        Container.Bind<SubscriptionViewModel>().FromInstance(subscriptionViewModel);
-
-        Container.Inject(subscriptionViewModel);
     }
 }

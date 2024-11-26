@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using LanguageExt;
+using R3;
 
 public class GetPlayerSubscription
 {
@@ -10,6 +11,6 @@ public class GetPlayerSubscription
         _subscriptions = dataSource;
     }
 
-    public async UniTask<Either<SubscriptionError, PurchasedPlayerSubscription>> Invoke() =>
-        await _subscriptions.GetPlayerSubscription();
+    public ReadOnlyReactiveProperty<PurchasedPlayerSubscription> Invoke() =>
+        _subscriptions.FetchPlayerSubscription();
 }
