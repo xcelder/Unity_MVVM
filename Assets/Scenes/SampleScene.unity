@@ -736,6 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557769829}
   - component: {fileID: 557769828}
+  - component: {fileID: 557769830}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -789,6 +790,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557769830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557769827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6048724dfe6347777b850a7ca26ddefc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subscriptionViewModel: {fileID: 11400000, guid: 0e9f4052e3c37a9809b181df43d2764d, type: 2}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +900,7 @@ GameObject:
   - component: {fileID: 851448516}
   - component: {fileID: 851448515}
   - component: {fileID: 851448519}
+  - component: {fileID: 851448520}
   m_Layer: 5
   m_Name: ClaimButton
   m_TagString: Untagged
@@ -937,9 +952,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 0e9f4052e3c37a9809b181df43d2764d, type: 2}
-        m_TargetAssemblyTypeName: SubscriptionViewModel, myproject
-        m_MethodName: OnClaimClicked
+      - m_Target: {fileID: 851448520}
+        m_TargetAssemblyTypeName: ClaimRewardsCmd, myproject
+        m_MethodName: OnClaimRewardsClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1020,6 +1035,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewModel: {fileID: 11400000, guid: 0e9f4052e3c37a9809b181df43d2764d, type: 2}
+--- !u!114 &851448520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851448514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bbc44a3a623efb284442ee993c34a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1027880141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1775,7 @@ GameObject:
   - component: {fileID: 2090113375}
   - component: {fileID: 2090113374}
   - component: {fileID: 2090113377}
+  - component: {fileID: 2090113378}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -1819,9 +1847,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 0e9f4052e3c37a9809b181df43d2764d, type: 2}
-        m_TargetAssemblyTypeName: SubscriptionViewModel, myproject
-        m_MethodName: OnBuyClicked
+      - m_Target: {fileID: 2090113378}
+        m_TargetAssemblyTypeName: BuySubscriptionCmd, myproject
+        m_MethodName: OnBuySubscriptionClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1882,6 +1910,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewModel: {fileID: 11400000, guid: 0e9f4052e3c37a9809b181df43d2764d, type: 2}
+--- !u!114 &2090113378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090113372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3730d3c6c0873b4349229bdd464fbeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
